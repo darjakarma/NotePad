@@ -23,7 +23,7 @@ public class Main {
                     listRecords();
                     break;
                 case "delete":
-                    deleteRecord();
+                    deleteRecord();//команда удаления
                     break;
                 default:
                     System.out.println("Wrong command");
@@ -33,7 +33,8 @@ public class Main {
     }
 
     private static void deleteRecord() {
-        int id = Asker.askInt("enter id");// DAO remove и передать ид что пользоватлеь ввел
+        int id = Asker.askInt("enter id");
+        // DAO remove и передать ид что пользоватлеь ввел
     }
 
     private static void listRecords() {

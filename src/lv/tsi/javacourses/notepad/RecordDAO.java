@@ -14,10 +14,11 @@ public class RecordDAO {
     public List<Record> getAllRecords() {
         return Collections.unmodifiableList(records);
     }
+
     public void remove(int id) {
-        //  records get3
-    } // можно использовать для нахождения индкса по ИД...  for (int i = 0; i < Math.min(leaders.size(), 5); i++) {// Когда нужно установить не меньше чего то но не точно
-    //  GameResult r = leaders.get(i);
-    // System.out.printf("%-" + maxLen + "s %2d %3.2f%n", r.getName(), r.getTriesCount(), r.getGameTime() / 1000.0);
-    // }
-}
+            //  records get3
+        } // можно использовать для нахождения индкса по ИД...  for (int i = 0; i < Math.min(leaders.size(), 5); i++) {// Когда нужно установить не меньше чего то но не точно
+        //  GameResult r = leaders.get(i);
+        // System.out.printf("%-" + maxLen + "s %2d %3.2f%n", r.getName(), r.getTriesCount(), r.getGameTime() / 1000.0);
+        // }
+    }
