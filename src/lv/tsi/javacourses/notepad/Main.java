@@ -23,6 +23,11 @@ public class Main {
                     listRecords();
                     break;
                 case "delete":
+                case "del":
+                    case "remove":
+                case "rm":
+
+                    //сделать оповещение что нет такой ИД:
                     deleteRecord();
                     break;
                 default:
@@ -33,20 +38,32 @@ public class Main {
     }
 
     private static void deleteRecord() {
-        int id = Asker.askInt("enter id");// DAO remove и передать ид что пользоватлеь ввел
+        var id = Asker.askInt("enter ID to remove");// DAO remove и передать ид что пользоватлеь ввел
     }
 
     private static void listRecords() {
-        List<Record> all = records.getAllRecords();
+        List<Person> all = records.getAllRecords();
         for (var r : all) {
             System.out.println(r);
         }
     }
 
     public static void createRecord() {
-        var r = new Record();
-        r.askInfo();
-        records.add(r);
+        var type = Asker.askString("Record type");
+        switch (type) {
+            case "person":
+                var r = new Person();
+                r.askInfo();
+                records.add(r);
+                break;
+            case "book":
+                var b = new Book();
+                b.askInfo();
+                // records.add(b);
+                break;
+            default:
+                System.out.println("Wrong record type");
+        }
     }
 
     private static void showHelp() {

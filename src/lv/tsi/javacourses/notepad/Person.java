@@ -1,6 +1,6 @@
 package lv.tsi.javacourses.notepad;
 
-public class Record {
+public class Person {
     private static int count;
     private int id; // только для чтения!! ниже толкьо гетер
     private String name; // тоже можно
@@ -8,7 +8,7 @@ public class Record {
     private String phone; //
     private String email;
 
-    public Record() {
+    public Person() {
         count++; // т.е. +1 - ид начнут подсчет как у нормальных людей, не комп.
         id = count;
     }

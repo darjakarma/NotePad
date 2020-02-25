@@ -1,23 +1,42 @@
 package lv.tsi.javacourses.notepad;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class RecordDAO {
-    private List<Record> records = new ArrayList<>();
+    private List<Person> records = new ArrayList<>();
 
-    public void add(Record rec) {
+    public void add(Person rec) {
         records.add(rec);
     }
 
-    public List<Record> getAllRecords() {
+    public List<Person> getAllRecords() {
         return Collections.unmodifiableList(records);
     }
+
+
     public void remove(int id) {
-        //  records get3
-    } // можно использовать для нахождения индкса по ИД...  for (int i = 0; i < Math.min(leaders.size(), 5); i++) {// Когда нужно установить не меньше чего то но не точно
-    //  GameResult r = leaders.get(i);
-    // System.out.printf("%-" + maxLen + "s %2d %3.2f%n", r.getName(), r.getTriesCount(), r.getGameTime() / 1000.0);
-    // }
+
+        // ВАРИАНТ 1
+        //     int size = records.size();
+        //   for (int i = 0; i < records.size(); i++) {
+        //     var r = records.get(i);
+        //    if (r.getId() == id);
+        //  records.remove(i);
+        //+ варинат _size++_ может понадобиться в будущем
+        // break;
+
+        // ВАРИАНТ 2
+        records.removeIf(r -> r.getId() == id);
+
+        // ВАРИАНТ 3
+     //   Iterator<Record> i = records.iterator();
+      //   while (i.hasNext()) {
+        // Record r = i.next();
+        // if (r.getId() == id) {
+           // i.remove();
+            // break;
+
+       //  ВАРИАНТ 4
+        // ListIterator <Record> = i
+        }
 }
