@@ -1,17 +1,11 @@
 package lv.tsi.javacourses.notepad;
 
-public class Book {
-    private static int count;
-    private int id;
+public class Book extends Record {
     private String title;
     private String isbn;
     private int pageCount;
     private String author;
 
-    public Book() {
-        count++;
-        id = count;
-    }
 
     public void askInfo() {
         title = Asker.askString("Title");
@@ -20,14 +14,6 @@ public class Book {
         pageCount = Asker.askInt("Page Count");
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

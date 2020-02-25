@@ -1,17 +1,11 @@
 package lv.tsi.javacourses.notepad;
 
-public class Person {
-    private static int count;
-    private int id; // только для чтения!! ниже толкьо гетер
+public class Person extends Record { //виртуально наследуется от Рекорда - все внутренности
     private String name; // тоже можно
     private String surname; //lastname - тоже можно
     private String phone; //
     private String email;
 
-    public Person() {
-        count++; // т.е. +1 - ид начнут подсчет как у нормальных людей, не комп.
-        id = count;
-    }
 
     public void askInfo() {
         name = Asker.askString("First name");
@@ -23,7 +17,7 @@ public class Person {
     @Override
     public String toString() {
         return "Record{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
@@ -59,9 +53,5 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
     }
 }
