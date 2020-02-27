@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Asker {
     private static Scanner scan = new Scanner(System.in); // запрашивает юзера чтото ввести
 
-    public static String askString(String msg) {
+    public static String askString(String msg) { // поменять как пробовала !!!!!
         System.out.print(msg + ": ");//  домашка 2- здесь. описание в тетради. Метод startWith / endsWith
         return scan.next();
     }
