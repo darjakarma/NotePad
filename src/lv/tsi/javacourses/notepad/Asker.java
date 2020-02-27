@@ -10,7 +10,7 @@ public class Asker {
     private static Scanner scan = new Scanner(System.in); // запрашивает юзера чтото ввести
 
     public static String askString(String msg) {
-        System.out.print(msg + ": ");
+        System.out.print(msg + ": ");//  домашка 2- здесь. описание в тетради. Метод startWith / endsWith
         return scan.next();
     }
 
