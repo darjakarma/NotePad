@@ -1,5 +1,6 @@
 package lv.tsi.javacourses.notepad;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
@@ -44,6 +45,17 @@ public class Asker {
                 return StringDateTime.timeFromString(strTime);//
             } catch (DateTimeParseException e) {
                 System.out.println("Wrong time format");
+            }
+        }
+    }
+
+    public static LocalDate askDate(String msg) {
+        for (; ; ) {
+            try {
+                var strDate = askString(msg + "(" + StringDateTime.DATE_PATTERN + ")");
+                return StringDateTime.dateFromString(strDate);
+            } catch (DateTimeParseException e) {
+                System.out.println("Wrong date format");
             }
         }
     }

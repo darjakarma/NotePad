@@ -1,21 +1,25 @@
 package lv.tsi.javacourses.notepad.records;
 
 import lv.tsi.javacourses.notepad.Asker;
+import lv.tsi.javacourses.notepad.StringDateTime;
+
+import java.time.LocalDate;
 
 public class Reminder extends Alarm {
-    private String date;
+    private LocalDate date;
 
 
     @Override
     public void askInfo() {
         super.askInfo();
-        setDate(Asker.askString("date"));
+        setDate(Asker.askDate("date"));
     }
+
 
     @Override
     public String stringContent() {
         return super.stringContent() +
-                "date= " + getDate() + '\'' ;
+                "date= " + StringDateTime.dateToString(date) + '\'' ;
     }
 
     @Override
@@ -23,11 +27,11 @@ public class Reminder extends Alarm {
         return "Reminder";
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }
