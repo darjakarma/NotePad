@@ -29,7 +29,6 @@ public class Main {
                     //сделать оповещение что нет такой ИД:
                     deleteRecord();
                     break;
-
                 default:
                     System.out.println("Wrong command");
 
@@ -72,6 +71,9 @@ public class Main {
             case "reminder":
                 addRecord(new Reminder());
                 break;
+        //    case "musik":
+          //      addRecord(new Musik()); WTF??????
+           //     break;
             default:
                 System.out.println("Wrong record type");
         }

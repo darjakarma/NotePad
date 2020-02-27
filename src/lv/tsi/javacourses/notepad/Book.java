@@ -6,6 +6,16 @@ public class Book extends Record {
     private int pageCount;
     private String author;
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + getId() +
+                "title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", pageCount=" + pageCount +
+                ", author='" + author + '\'' +
+                '}';
+    }
 
     public void askInfo() {
         title = Asker.askString("Title");
