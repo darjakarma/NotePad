@@ -1,4 +1,6 @@
-package lv.tsi.javacourses.notepad;
+package lv.tsi.javacourses.notepad.records;
+
+import lv.tsi.javacourses.notepad.Asker;
 
 public class Reminder extends Alarm {
     private String date;
@@ -11,13 +13,14 @@ public class Reminder extends Alarm {
     }
 
     @Override
-    public String toString() {
-        return "Reminder{" +
-                "id= " + getId() + '\'' +
-                "text= " + getText() + '\'' +
-                "time= " + getTime() + '\'' +
-                "date= " + getDate() + '\'' +
-                '}';
+    public String stringContent() {
+        return super.stringContent() +
+                "date= " + getDate() + '\'' ;
+    }
+
+    @Override
+    protected String type() {
+        return "Reminder";
     }
 
     public String getDate() {

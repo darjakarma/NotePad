@@ -1,10 +1,10 @@
-package lv.tsi.javacourses.notepad;
+package lv.tsi.javacourses.notepad.records;
 
-public abstract class Record {//абстрактный. общее значение для персоны и бука. Описывает общее поведение всех рекордов в системе
+public abstract class AbstractRecord {//абстрактный. общее значение для персоны и бука. Описывает общее поведение всех рекордов в системе
     private static int counter; // относиться только к Рекорду. тоесть ИДшка будет одна и та же у Буук и Персон
     private int id;
 
-    public Record() { //умение увеличивать ИДшку (здесь) на единицу
+    public AbstractRecord() { //умение увеличивать ИДшку (здесь) на единицу
         counter++;
         this.id = counter;
     }
@@ -16,11 +16,16 @@ public abstract class Record {//абстрактный. общее значен�
     public abstract void askInfo();
         // абстрактный метод
 
+    protected String stringContent() {
+    return "id=" + id;        //для тех кто знает РЕКОРД
+    }
+
+    protected abstract String type(); //если метод абстрактый - ТЕЛА БЫТЬ НЕ МОЖЕТ
+
+
     @Override
-    public String toString() {
-        return "Record{" +
-                "id=" + id +
-                '}';
+    public final String toString() {
+        return type() + "{" + stringContent() + '}';
     }
 
     //Book b = new Book();//можно положить сюда book

@@ -1,5 +1,7 @@
 package lv.tsi.javacourses.notepad;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,6 +33,17 @@ public class Asker {
             } catch (InputMismatchException e) {
                 var str = scan.next();
                 System.out.println(str + " isn't an integer. Please enter integer value");
+            }
+        }
+    }
+
+    public static LocalTime askTime(String msg) {
+        for (; ; ) {
+            try {
+                var strTime = askString(msg + "(" + StringDateTime.TIME_PATTERN + ")");//спрашиваем в виде строки и юзеру указываем необходимый формат времени
+                return StringDateTime.timeFromString(strTime);//
+            } catch (DateTimeParseException e) {
+                System.out.println("Wrong time format");
             }
         }
     }

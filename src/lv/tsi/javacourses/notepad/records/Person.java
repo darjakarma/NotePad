@@ -1,6 +1,8 @@
-package lv.tsi.javacourses.notepad;
+package lv.tsi.javacourses.notepad.records;
 
-public class Person extends Record { //виртуально наследуется от Рекорда - все внутренности
+import lv.tsi.javacourses.notepad.Asker;
+
+public class Person extends AbstractRecord { //виртуально наследуется от Рекорда - все внутренности
     private String name; // тоже можно
     private String surname; //lastname - тоже можно
     private String phone; //
@@ -15,14 +17,17 @@ public class Person extends Record { //виртуально наследуетс
     }
 
     @Override
-    public String toString() {
-        return "Record{" +
-                "id=" + getId() +
+    public String stringContent() {
+        return super.stringContent() +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'' ;
+    }
+
+    @Override
+    protected String type() {
+        return "Person";
     }
 
     public String getName() {

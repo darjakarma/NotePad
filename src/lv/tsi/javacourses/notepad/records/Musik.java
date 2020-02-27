@@ -1,4 +1,4 @@
-package lv.tsi.javacourses.notepad;
+package lv.tsi.javacourses.notepad.records;
 
 public class Musik { //невозможно наследовать Рекорд. Без Рекорда неоткуда взять ИДшку((((
     private String album;
