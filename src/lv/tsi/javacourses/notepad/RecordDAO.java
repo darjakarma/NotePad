@@ -2,7 +2,7 @@ package lv.tsi.javacourses.notepad;
 
 import java.util.*;
 
-public class RecordDAO {
+public class RecordDAO {//создает колекцию  лист, записывает,удаляет
     private List<Record> records = new ArrayList<>();
 
     public void add(Record rec) {

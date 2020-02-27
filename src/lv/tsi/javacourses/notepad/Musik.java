@@ -1,23 +1,18 @@
 package lv.tsi.javacourses.notepad;
 
-public class Musik extends Record {
+public class Musik { //невозможно наследовать Рекорд. Без Рекорда неоткуда взять ИДшку((((
     private String album;
     private String artist;
     private String songname;
     private int songtime;
 
-    @Override
-    public void askInfo() {
-        album = new Asker.askString("album");
-        artist = new Asker.askString("Artist");
-        songname = new Asker.askString("Song title");
-        songtime = new Asker.askInt("Song time");
-    }
+//    public void askInfo() { ПОЧЕМУ НЕ ВСТАВЛЯЕТСЯ АСКЕР?????
+  //      album = new Asker.askString("Album");
+    // }
 
     @Override
     public String toString() {
         return "Musik{" +
-                "id=" + getId() +
                 "album='" + album + '\'' +
                 ", artist='" + artist + '\'' +
                 ", songname='" + songname + '\'' +
