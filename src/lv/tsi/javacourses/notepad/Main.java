@@ -72,6 +72,9 @@ public class Main {
             case "reminder":
                 addRecord(new Reminder());
                 break;
+            case "musik":
+                addRecord(new Musik());
+                break;
             default:
                 System.out.println("Wrong record type");
         }
