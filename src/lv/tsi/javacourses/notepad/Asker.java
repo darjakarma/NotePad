@@ -11,8 +11,18 @@ public class Asker {
 
     public static String askString(String msg) { // поменять как пробовала !!!!!
         System.out.print(msg + ": ");//  домашка 2- здесь. описание в тетради. Метод startWith / endsWith
-        return scan.next();
-    }
+        var result = scan.next();
+        if (result.startsWith("\"")) {
+            while (!result.endsWith("\"")) {
+                result = result + " " + scan.next();
+            }
+        }
+        return result;
+       // if (result.startsWith("\")) {
+         //   while (!result.endsWith("\"))
+        //}
+        }
+
 
     public static int askInt(String msg, int min, int max) {
         for (; ; ) {

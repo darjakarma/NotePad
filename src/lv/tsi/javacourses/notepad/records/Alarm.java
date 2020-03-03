@@ -12,6 +12,7 @@ public class Alarm extends Note {
     public void askInfo() {
         super.askInfo();
         time = Asker.askTime("time");
+        super.askInfo();
     }
 
     @Override
