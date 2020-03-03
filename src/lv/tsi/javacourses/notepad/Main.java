@@ -29,9 +29,21 @@ public class Main {
                     //сделать оповещение что нет такой ИД:
                     deleteRecord();
                     break;
+                case "search":
+                    searchRecord();
+                    break;
                 default:
                     System.out.println("Wrong command");
 
+            }
+        }
+    }
+
+    private static void searchRecord() {
+        var substr = Asker.askString("Enter substring to find");
+        for (var r : records.getAllRecords()) {
+            if (r.contains(substr)) {// данный метод смотрит айдишку!! проверяет есть ли там то что ввел пользователь
+                System.out.println(r);
             }
         }
     }

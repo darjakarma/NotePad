@@ -9,6 +9,11 @@ public abstract class AbstractRecord {//абстрактный. общее зн�
         this.id = counter;
     }
 
+    public boolean contains(String substr) { //будем сюда отправлять  пользователя что он ищет
+        String strId = String.valueOf(id); // так можно преобразовать практически любой тип в строку!!!
+        return strId.contains(substr);
+    }
+
     public int getId() {
         return id;
     }

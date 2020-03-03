@@ -8,6 +8,15 @@ public class Person extends AbstractRecord { //виртуально наслед
     private String phone; //
     private String email;
 
+    @Override
+    public boolean contains(String substr) {
+        var tmp = substr.toLowerCase();
+        return super.contains(substr)
+                || name.toLowerCase().contains(substr)// ловеркейс заведомо строчные  - ищет
+                || surname.toLowerCase().contains(substr)
+                || phone.toLowerCase().contains(substr)
+                || email.toLowerCase().contains(substr);
+    }
 
     public void askInfo() {
         name = Asker.askString("First name");

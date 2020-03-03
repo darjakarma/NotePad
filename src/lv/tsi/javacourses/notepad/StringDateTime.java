@@ -6,7 +6,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class StringDateTime {
-    public static final String TIME_PATTERN = "HH-mm";// часы и минуты HH:mm
+    public static final String TIME_PATTERN = "HH:mm";// часы и минуты HH:mm
     public static final DateTimeFormatter TIME_FORMATTER =
                                         DateTimeFormatter.ofPattern(TIME_PATTERN);
 
