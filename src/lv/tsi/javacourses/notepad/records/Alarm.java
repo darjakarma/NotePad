@@ -5,7 +5,7 @@ import lv.tsi.javacourses.notepad.StringDateTime;
 
 import java.time.LocalTime;
 
-public class Alarm extends Note {
+public class Alarm extends Note implements Expirable {
     private LocalTime time;
 
     @Override
@@ -37,6 +37,12 @@ public class Alarm extends Note {
     }
     public void setTime(LocalTime time) {
         this.time = time;
+    }
+
+    @Override
+    public boolean isExpired() {
+        var now = LocalTime.now();
+        return now.isAfter(time);// или getTime()) - тоже можно использовать ;
     }
 }
 

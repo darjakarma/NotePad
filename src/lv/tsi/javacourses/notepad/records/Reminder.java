@@ -4,10 +4,17 @@ import lv.tsi.javacourses.notepad.Asker;
 import lv.tsi.javacourses.notepad.StringDateTime;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public class Reminder extends Alarm {
+public class Reminder extends Alarm implements Expirable { // масло масленное но пишем для коллег - если вдруг понадобиться новому доугому человеку читать мой код
     private LocalDate date;
 
+   @Override
+    public boolean isExpired() {
+      var now = LocalDateTime.now();
+       var dt = LocalDateTime.of(date, getTime());
+        return now.isAfter(dt);// сработает (Reminder) когда дата и время будут достигнуты
+    }
 
     @Override
     public void askInfo() {

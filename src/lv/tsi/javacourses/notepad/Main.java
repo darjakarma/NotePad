@@ -32,9 +32,24 @@ public class Main {
                 case "search":
                     searchRecord();
                     break;
+                case "expired":
+                    showExpired();
+                    break;
                 default:
                     System.out.println("Wrong command");
 
+            }
+        }
+    }
+
+    private static void showExpired() {
+        for (var r : records.getAllRecords()) {
+            if (r instanceof Expirable) {
+                Expirable e = (Expirable) r;
+                if (e.isExpired()) {
+                    // if (r instanceof Expirable && ((Expirable) r).isExpired()) {// если Р -
+                    System.out.println(r);
+                }
             }
         }
     }
@@ -83,9 +98,9 @@ public class Main {
             case "reminder":
                 addRecord(new Reminder());
                 break;
-        //    case "musik":
-          //      addRecord(new Musik()); WTF??????
-           //     break;
+            //    case "musik":
+            //      addRecord(new Musik()); WTF??????
+            //     break;
             default:
                 System.out.println("Wrong record type");
         }
