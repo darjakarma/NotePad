@@ -11,17 +11,24 @@ public class Asker {
 
     public static String askString(String msg) { // поменять как пробовала !!!!!
         System.out.print(msg + ": ");//  домашка 2- здесь. описание в тетради. Метод startWith / endsWith
-        var result = scan.next();
-        if (result.startsWith("\"")) {
-            while (!result.endsWith("\"")) {
-                result = result + " " + scan.next();
+        var result = new StringBuilder(100);
+        var str = scan.next();
+        result.append(str);
+        // var result = scan.next(); //выше поменяли резулт на стр
+        if (str.startsWith("\"")) {
+            while (!str.endsWith("\"")) {
+                str = scan.next();
+                result.append(' ').append(str);
+                // result = result + " " + scan.next(); // дальше дальше скан ируй тексту пока...
             }
+            result.deleteCharAt(0).deleteCharAt(result.length() - 1);//можно обьединять методы под одной переменной
+            //result.deleteCharAt(result.length() - 1); через точку
         }
-        return result;
-       // if (result.startsWith("\")) {
-         //   while (!result.endsWith("\"))
+        return result.toString(); // как только появилась ковычка - вайл закончил жить
+        // if (result.startsWith("\")) {
+        //   while (!result.endsWith("\"))
         //}
-        }
+    }
 
 
     public static int askInt(String msg, int min, int max) {
