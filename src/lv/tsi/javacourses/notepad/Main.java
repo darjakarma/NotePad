@@ -35,9 +35,26 @@ public class Main {
                 case "expired":
                     showExpired();
                     break;
+                case "dismiss":
+                    dismissExpirable();
+                    break;
                 default:
                     System.out.println("Wrong command");
 
+            }
+        }
+    }
+
+    private static void dismissExpirable() {
+        int id = Asker.askInt("Enter ID to dismiss");
+        for (var r : records.getAllRecords()) {
+            if (r.getId() == id) {
+                if (r instanceof Expirable) {//сли рекодро экспайрится от Экпарибл
+                    Expirable e = (Expirable) r;
+                    e.dismiss();
+                } else {
+                    System.out.println("It isn't expirable record");
+                }
             }
         }
     }

@@ -9,6 +9,10 @@ public class Alarm extends Note implements Expirable {
     private LocalTime time;
 
     @Override
+    public void dismiss() {
+    }
+
+    @Override
     public boolean contains(String substr) {
         return super.contains(substr)
         || StringDateTime.timeToString(time).contains(substr);
